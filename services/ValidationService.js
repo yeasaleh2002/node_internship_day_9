@@ -1,6 +1,5 @@
 const { Validator, addCustomMessages } = require('node-input-validator');
 
-// {fieldName:message} eg:{email:"Invalid Email", password:"Password too short"}
 const formatValidationError = (error) => {
   const formatted = Object.entries(error)
     .map(([key, value]) => ({
@@ -18,7 +17,6 @@ const formatValidationError = (error) => {
 
 module.exports = {
   /**
-   * Input Validator middleware for controller
    * @param {object} validationObject object defining body fields and its validation types eg:{email:required|email}
    * @param {object} _extendMessages object defining message to throw on validation error eg: {"email.required":"Email is required","email.email":"Invalid email"}
    *
